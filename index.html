@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GPU.GE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
+<body>
+    <div id="weather-widget" class="weather-widget">
+        <p id="weather-location">Loading...</p>
+        <p id="weather-temp">...</p>
+        <p id="weather-desc">...</p>
+      </div>
+      <header>
+        <img src="img/logo.png" alt="GPU.GE Logo" id="logo">
+        <h1>GPU.GE</h1>
+        <p>თქვენი დამხმარე ძალა ვიდეოთამაშებში და რენდერში.</p>
+        <div id="search-container" style="text-align:center; margin: 2rem;">
+          <input type="text" id="search-bar" placeholder="ძებნა..." />
+        </div>
+        <button id="toggle-cart">🛒 კალათა (<span id="cart-count">0</span>)</button>
+      </header>
+
+  <div class="container" id="product-list">
+  </div>
+
+
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="close-cart">&times;</span>
+      <h2>თქვენი კალათა</h2>
+      <ul id="cart-items"></ul>
+      <div class="cart-total">ჯამი: $<span id="total">0.00</span></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

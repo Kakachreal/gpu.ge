@@ -1,0 +1,256 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #44826D, #50b996); 
+  color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+#logo {
+  width: 60px;
+  height: auto;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+#logo:hover {
+  transform: scale(1.1);
+}
+
+#search-bar {
+  width: 350px;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#search-bar:focus {
+  border-color: #4b6cb7;
+  box-shadow: 0 4px 15px rgba(75, 108, 183, 0.25);
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  flex-grow: 1;
+  font-weight: 600;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  font-weight: 300;
+}
+
+.weather-widget {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(30, 42, 56, 0.85);
+  color: white;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem; 
+  width: auto;
+  max-width: 160px; 
+  font-size: 0.7rem; 
+  text-align: right;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+  z-index: 10;
+}
+
+#weather-location {
+  font-weight: 600;
+  font-size: 0.8rem; 
+  margin: 0;
+}
+
+#weather-temp {
+  font-size: 0.7rem; 
+  margin: 0.2rem 0;
+}
+
+#weather-desc {
+  font-size: 0.6rem; 
+  margin: 0;
+  opacity: 0.8;
+}
+#toggle-cart {
+  background: #44826D;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-cart:hover {
+  background-color: #349b79;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+  gap: 2rem;
+  padding: 3rem;
+  justify-items: center;
+}
+.product {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.product:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  height: 450px;
+  width: 450px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.product h3 {
+  font-size: 1.7rem;
+  color: #222;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.product p {
+  color: #777;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.product button {
+  background: #44826D;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product button:hover {
+  background: #3dae88;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #ff5722;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #f57c00;
+}
+
+.cart-total {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  color: #222;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  border-bottom: 2px solid #ddd;
+  font-size: 1.1rem;
+}
+
+.cart-item button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cart-item button:hover {
+  background: #e91c1c;
+}
+
+.hidden {
+  display: none;
+}
